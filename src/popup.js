@@ -1,9 +1,9 @@
-// 鼠标悬停在常用短语时出现“删除”
 $(function(){
+    // 鼠标悬停在常用短语时出现“删除”
     $("li").hover(function(){
-        $(".destroy").css("display", "inline");
+        $(this).find(".destroy").css("display", "inline");
     }, function(){
-        $(".destroy").css("display", "none");
+        $(this).find(".destroy").css("display", "none");
     });
 });
 
