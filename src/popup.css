@@ -72,6 +72,11 @@ a:hover {
     transform: translate(0, -50%);
 }
 
+.view p {
+    width: 260px;
+    word-break: break-word; /* 元素溢出后自动换行 */
+}
+
 .destroy {
     position: absolute;
     top: 50%;
