@@ -72,9 +72,14 @@ a:hover {
     transform: translate(0, -50%);
 }
 
-.view p {
-    width: 260px;
-    word-break: break-word; /* 元素溢出后自动换行 */
+.view textarea {
+    font-size: inherit;
+    resize: none;
+    border: none;
+}
+
+.view textarea:focus {
+    outline: none;
 }
 
 .destroy {

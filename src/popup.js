@@ -1,13 +1,20 @@
-$(function(){
+$(function () {
     // 鼠标悬停在常用短语时出现“删除”
-    $("li").hover(function(){
+    $("li").hover(function () {
         $(this).find(".destroy").css("display", "inline");
-    }, function(){
+    }, function () {
         $(this).find(".destroy").css("display", "none");
+    });
+    // textarea高度自适应
+    $('textarea').each(function () {
+        this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+    }).on('input', function () {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
     });
 });
 
-chrome.storage.sync.get(["list"], function(result){
+chrome.storage.sync.get(["list"], function (result) {
     let data = result.list ? result.list : []; // 常用短语列表
     var app = new Vue({
         el: ".app",
@@ -32,12 +39,19 @@ chrome.storage.sync.get(["list"], function(result){
         watch: {
             list() {
                 // list一修改，就把它保存起来
-                chrome.storage.sync.set({"list": this.list});
+                chrome.storage.sync.set({ "list": this.list });
                 // 为新增加的常用短语添加鼠标悬停事件
-                $("li").hover(function(){
+                $("li").hover(function () {
                     $(this).find(".destroy").css("display", "inline");
-                }, function(){
+                }, function () {
                     $(this).find(".destroy").css("display", "none");
+                });
+                // 让新添加的textarea高度自适应
+                $('textarea').each(function () {
+                    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+                }).on('input', function () {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
                 });
             }
         }
