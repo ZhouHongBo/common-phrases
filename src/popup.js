@@ -1,3 +1,12 @@
+// 鼠标悬停在常用短语时出现“删除”
+$(function(){
+    $("li").hover(function(){
+        $(".destroy").css("display", "inline");
+    }, function(){
+        $(".destroy").css("display", "none");
+    });
+});
+
 chrome.storage.sync.get(["list"], function(result){
     let data = result.list ? result.list : []; // 常用短语列表
     var app = new Vue({
