@@ -34,6 +34,16 @@ chrome.storage.sync.get(["list"], function(result){
                 chrome.storage.sync.set({"list": this.list});
             }
         },
+        watch: {
+            list() {
+                // 为新增加的常用短语添加鼠标悬停事件
+                $("li").hover(function(){
+                    $(this).find(".destroy").css("display", "inline");
+                }, function(){
+                    $(this).find(".destroy").css("display", "none");
+                });
+            }
+        }
     });
 });
 
