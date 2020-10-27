@@ -1,5 +1,5 @@
 chrome.storage.sync.get(["list"], function(result){
-    let data = result.list ? result.list : [];
+    let data = result.list ? result.list : []; // 常用短语列表
     var app = new Vue({
         el: ".app",
         data: {
@@ -9,7 +9,7 @@ chrome.storage.sync.get(["list"], function(result){
         methods: {
             add: function () {
                 if (this.list.includes(this.inputValue)) {
-                    this.inputValue = "请勿输入重复值";
+                    this.inputValue = "请勿输入重复值！";
                 } else if (this.inputValue) {
                     this.list.push(this.inputValue);
                     this.inputValue = "";
