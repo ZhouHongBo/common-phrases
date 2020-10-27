@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px "Microsoft YaHei";
+    width: 330px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    padding: 3px 7px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: inherit;
+}
+
+a:hover {
+    color:  #a6222299;
+}
+
+.app {
+    position: relative;
+    margin: 0 10px;
+}
+
+/* 输入 */
+
+.app h1 {
+    font-weight: 600;
+    color: #a6222299;
+    text-align: center;
+    line-height: 2;
+}
+
+.new {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.new:focus {
+    outline: none;
+    border-color: #a6222299;
+}
+
+.new::placeholder {
+    font-style: italic;
+}
+
+/* 列表 */
+
+.list {
+    list-style: none;
+}
+
+.list li {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
+}
+
+.toggle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.destroy {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(0, -50%);
+}
+
+/* 统计 */
+
+.app footer {
+    position: relative;
+    height: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
+}
+
+.count {
+    float: left;
+}
+
+.clear {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/* 使用说明 */
+
+.info {
+    text-align: center;
+    margin: 6px auto;
+}

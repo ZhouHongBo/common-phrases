@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用短语</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <section class="app">
+        <!-- 输入 -->
+        <header>
+            <h1>常用短语</h1>
+            <input class="new" type="text" placeholder="请输入..." v-model="inputValue" @keyup.enter="add">
+        </header>
+        <!-- 列表 -->
+        <main>
+            <ul class="list">
+                <li v-for="(idx, val) in list"> <!-- vue2.x 应改为(val, idx) -->
+                    <div class="view">
+                        <p> {{val}} </p>
+                        <a class="destroy" href="#" @click="del(idx)">删除</a>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        <!-- 统计 -->
+        <footer>
+            <span class="count">
+                共
+                <span> {{list.length}} </span>
+                项
+            </span>
+            <a href="#" class="clear" @click="clear">清空</a>
+        </footer>
+    </section>
+
+    <!-- 使用说明 -->
+    <footer class="info">
+        <p>拖动排序，双击编辑</p>
+    </footer>
+
+    <script src="vue.csp.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
