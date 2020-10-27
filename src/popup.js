@@ -12,6 +12,12 @@ $(function () {
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';
     });
+    // 修改常用短语后按回车不换行，光标消失
+    $("textarea").keydown(function(e){
+        if (e.keyCode === 13) {
+            $(this).blur();
+        }
+    });
 });
 
 chrome.storage.sync.get(["list"], function (result) {
@@ -40,18 +46,22 @@ chrome.storage.sync.get(["list"], function (result) {
             list() {
                 // list一修改，就把它保存起来
                 chrome.storage.sync.set({ "list": this.list });
-                // 为新增加的常用短语添加鼠标悬停事件
+                // 把开头的一段代码复制下来
                 $("li").hover(function () {
                     $(this).find(".destroy").css("display", "inline");
                 }, function () {
                     $(this).find(".destroy").css("display", "none");
                 });
-                // 让新添加的textarea高度自适应
                 $('textarea').each(function () {
                     this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
                 }).on('input', function () {
                     this.style.height = 'auto';
                     this.style.height = (this.scrollHeight) + 'px';
+                });
+                $("textarea").keydown(function(e){
+                    if (e.keyCode === 13) {
+                        $(this).blur();
+                    }
                 });
             }
         }
