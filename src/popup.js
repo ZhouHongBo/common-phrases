@@ -17,9 +17,7 @@ chrome.storage.sync.get(["list"], function(result){
         },
         methods: {
             add: function () {
-                if (this.list.includes(this.inputValue)) {
-                    this.inputValue = "请勿输入重复值！";
-                } else if (this.inputValue) {
+                if (this.inputValue) {
                     this.list.push(this.inputValue);
                     this.inputValue = "";
                 }

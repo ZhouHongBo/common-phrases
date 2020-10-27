@@ -19,7 +19,7 @@
         <!-- 列表 -->
         <main>
             <ul class="list">
-                <li v-for="(idx, val) in list"> <!-- vue2.x 应改为(val, idx) -->
+                <li v-for="(idx, val) in list" track-by="$index"> <!-- vue2.x 应改为(val, idx) -->
                     <div class="view">
                         <p> {{val}} </p>
                         <a class="destroy" href="#" @click="del(idx)">删除</a>

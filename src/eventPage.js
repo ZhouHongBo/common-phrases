@@ -7,6 +7,7 @@ let menuItem = {
 
 chrome.storage.onChanged.addListener(function (changes, areaName){
     let list = changes.list.newValue; // 常用短语列表
+    list = Array.from(new Set(list)) // 去重
 
     // 生成上下文菜单参数
     let items = [];
