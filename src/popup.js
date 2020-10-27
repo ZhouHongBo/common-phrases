@@ -22,20 +22,19 @@ chrome.storage.sync.get(["list"], function(result){
                 } else if (this.inputValue) {
                     this.list.push(this.inputValue);
                     this.inputValue = "";
-                    chrome.storage.sync.set({"list": this.list});
                 }
             },
             del: function (idx) {
                 this.list.splice(idx, 1);
-                chrome.storage.sync.set({"list": this.list});
             },
             clear: function () {
                 this.list = [];
-                chrome.storage.sync.set({"list": this.list});
             }
         },
         watch: {
             list() {
+                // list一修改，就把它保存起来
+                chrome.storage.sync.set({"list": this.list});
                 // 为新增加的常用短语添加鼠标悬停事件
                 $("li").hover(function(){
                     $(this).find(".destroy").css("display", "inline");
