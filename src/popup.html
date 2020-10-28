@@ -24,8 +24,8 @@
                         <textarea cols="30" rows="1" v-model="val"></textarea>
                         <a class="destroy" href="#" @click="del(idx)">删除</a>
                         <div class="sort">
-                            <div class="up"></div>
-                            <div class="down"></div>
+                            <div class="up" @click="up(idx)"></div>
+                            <div class="down" @click="down(idx)"></div>
                         </div>
                     </div>
                 </li>

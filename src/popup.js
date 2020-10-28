@@ -42,6 +42,20 @@ chrome.storage.sync.get(["list"], function (result) {
             },
             clear: function () {
                 this.list = [];
+            },
+            up: function (idx) {
+                if (idx !== 0) {
+                    let pre = this.list[idx-1];
+                    let current = this.list[idx];
+                    this.list.splice(idx-1, 2, current, pre);
+                }
+            },
+            down: function (idx) {
+                if (idx !== this.list.length-1) {
+                    let post = this.list[idx+1];
+                    let current = this.list[idx];
+                    this.list.splice(idx, 2, post, current);
+                }
             }
         },
         watch: {
