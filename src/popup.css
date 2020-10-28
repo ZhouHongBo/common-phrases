@@ -84,8 +84,42 @@ a:hover {
     display: none;
     position: absolute;
     top: 50%;
-    right: 4px;
+    right: 13px;
     transform: translate(0, -50%);
+}
+
+.sort {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translate(0, -50%);
+}
+
+.up,
+.down {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    cursor: pointer;
+}
+
+.up {
+    border-bottom-color: #ccc;
+    margin-bottom: 2px;
+}
+
+.up:hover {
+    border-bottom-color: #a6222299;
+}
+
+.down {
+    border-top-color: #ccc;
+    margin-top: 2px;
+}
+
+.down:hover {
+    border-top-color: #a6222299;
 }
 
 /* 统计 */
@@ -103,7 +137,7 @@ a:hover {
 
 .clear {
     position: absolute;
-    right: 4px;
+    right: 13px;
     top: 50%;
     transform: translate(0, -50%);
 }

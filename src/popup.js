@@ -1,9 +1,11 @@
 $(function () {
-    // 鼠标悬停在常用短语时出现“删除”
+    // 鼠标悬停在常用短语时出现“删除”和“排序”
     $("li").hover(function () {
         $(this).find(".destroy").css("display", "inline");
+        $(this).find(".sort").css("display", "block");
     }, function () {
         $(this).find(".destroy").css("display", "none");
+        $(this).find(".sort").css("display", "none");
     });
     // textarea高度自适应
     $('textarea').each(function () {
@@ -49,8 +51,10 @@ chrome.storage.sync.get(["list"], function (result) {
                 // 把开头的一段代码复制下来
                 $("li").hover(function () {
                     $(this).find(".destroy").css("display", "inline");
+                    $(this).find(".sort").css("display", "block");
                 }, function () {
                     $(this).find(".destroy").css("display", "none");
+                    $(this).find(".sort").css("display", "none");
                 });
                 $('textarea').each(function () {
                     this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
