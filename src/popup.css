@@ -11,9 +11,6 @@ body {
 
 a {
     text-decoration: none;
-    padding: 3px 7px;
-    border: 1px solid transparent;
-    border-radius: 3px;
     color: inherit;
 }
 
@@ -74,6 +71,7 @@ a:hover {
 
 .view textarea {
     font-size: inherit;
+    margin-top: 3px;
     resize: none;
     border: none;
 }
