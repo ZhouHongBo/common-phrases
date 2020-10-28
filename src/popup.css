@@ -84,7 +84,7 @@ a:hover {
     display: none;
     position: absolute;
     top: 50%;
-    right: 0px;
+    right: 4px;
     transform: translate(0, -50%);
 }
 
@@ -92,25 +92,18 @@ a:hover {
 
 .app footer {
     position: relative;
-    height: 20px;
-    border-bottom: 1px solid #ddd;
-    padding: 4px;
+    height: 38px;
+    padding: 0 4px;
 }
 
 .count {
     float: left;
+    line-height: 38px;
 }
 
 .clear {
     position: absolute;
-    right: 0px;
+    right: 4px;
     top: 50%;
     transform: translate(0, -50%);
-}
-
-/* 使用说明 */
-
-.info {
-    text-align: center;
-    margin: 6px auto;
 }
